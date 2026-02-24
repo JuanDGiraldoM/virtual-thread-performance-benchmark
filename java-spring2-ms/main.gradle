@@ -82,6 +82,7 @@ tasks.withType(JavaCompile).configureEach {
             '-Amapstruct.suppressGeneratorTimestamp=true'
     ]
 }
+
 tasks.named('wrapper') {
     gradleVersion = '9.3.0'
 }

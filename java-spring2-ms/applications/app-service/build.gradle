@@ -3,7 +3,6 @@ apply plugin: 'org.springframework.boot'
 dependencies {
 	testImplementation 'tools.jackson.core:jackson-databind'
 	testImplementation 'com.tngtech.archunit:archunit:1.4.1'
-	implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'org.reactivecommons.utils:object-mapper:0.1.0'
 	implementation project( ':reactive-web')
     implementation project(':model')
