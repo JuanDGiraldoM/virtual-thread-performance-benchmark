@@ -1,7 +1,9 @@
 FROM gradle:9.3.1-jdk25-alpine
 WORKDIR /app
 COPY . .
-RUN gradle bootJar
+RUN --mount=type=cache,target=/home/gradle/.gradle \
+    --mount=type=cache,target=/app/build-cache \
+    gradle bootJar
 
 FROM eclipse-temurin:25.0.2_10-jre-alpine-3.23
 WORKDIR /app
