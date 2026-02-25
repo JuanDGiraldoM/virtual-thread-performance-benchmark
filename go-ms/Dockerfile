@@ -1,7 +1,7 @@
 ##
 ## Build
 ##
-FROM golang:1.18.4-alpine3.16 AS build
+FROM golang:1.26.0-alpine3.23 AS build
 WORKDIR /app
 
 COPY go.mod .
@@ -15,7 +15,7 @@ RUN go build -o /go-ms
 ##
 ## Deploy
 ##
-FROM alpine:3.16
+FROM alpine:3.23
 WORKDIR /
 
 COPY --from=build /go-ms /go-ms
